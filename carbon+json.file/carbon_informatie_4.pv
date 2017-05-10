@@ -1,0 +1,140 @@
+size(512, 512)
+background(1)
+
+import json
+multiply = 4
+
+    
+with open ('01_Carbondioxide.json') as infile:
+    gasData = json.load(infile)
+print len(gasData)
+
+years = [str(y) for y in range(1990, 2015)]
+print years
+
+# data (van lage naar hoge waardes) 
+
+# agriculture
+data = gasData[0] 
+print data['sector']
+
+# built-up area
+data = gasData[3]
+print data['sector']
+
+# traffic and transport
+data = gasData[2]
+print data['sector']
+
+# industry and energy 
+data = gasData[1]
+print data['sector'] 
+
+
+# forloop 
+
+for y in years:
+	print data[y]
+
+x = 30	
+for year in years:
+    x = x + 16
+    barheight = data[year] * multiply
+    barheightagriculture= data[0][year] * multiply
+    barheightbuiltup= data[3][year] * multiply
+    barheighttraffic= data[2][year] * multiply
+    barheightindustry= data[1][year] * multiply
+
+
+    fill('#0000ff')
+    rect(x, 500 - barheight ,12, barheight)
+    
+    fill('#800080')
+    rect(x, 500 - barheight-barheightagriculture ,12, barheight-barheightagriculture)
+    
+    fill ('#000')
+    rect(x, 500 - barheight-barheightagriculture-barheightbuiltup ,12, barheight-barheightagriculture-barheightbuiltup) 
+
+    fill('#f00')
+    rect(x, 500 - barheight-barheightagriculture-barheightbuiltup - barheighttraffic ,12, barheight-barheightagriculture-barheightbuiltup - barheighttraffic)
+
+# ?
+# rect(x, 500-(barheightagriculture-barheightindustry-barheighttraffic-barheightbuiltup), 12,
+# (barheightagriculture-barheightindustry-barheighttraffic-barheightbuiltup))
+
+
+
+# oude data
+
+
+# print len(freqData)
+
+# years = [str(y) for y in range(1990, 2015)]
+# print years
+
+
+
+# for y in years:
+# 	print data[y]
+
+# x = 30
+# for year in years:
+#     x = x + 16
+#     barheight = data[year] * multiply
+#     fill('#800080')
+#     rect(x, 500 - barheight ,12, barheight) 
+# # Built-up area
+
+# # with open ('01_Carbondioxide.json') as infile:
+# #     freqData = json.load(infile)
+# print len(freqData)
+
+# years = [str(y) for y in range(1990, 2015)]
+# print years
+
+# data = freqData[3]
+# print data['sector']
+
+# for y in years:
+# 	print data[y]
+
+# x = 30
+# for year in years:
+#     x = x + 16
+#     barheight = data[year] * multiply
+#     fill ('#000')
+#     rect(x, 500 - barheight ,12, barheight)
+
+# # agriculture
+
+
+# # with open ('01_Carbondioxide.json') as infile:
+# #     freqData = json.load(infile)
+# print len(freqData)
+
+# years = [str(y) for y in range(1990, 2015)]
+# print years
+
+# data = freqData[0]
+# print data['sector']
+
+# for y in years:
+# 	print data[y]
+
+# x = 30
+# for year in years:
+#     x = x + 16
+#     barheight = data[year] * multiply
+#     fill('#f00')
+#     rect(x, 500 - barheight ,12, barheight)
+    
+    
+    
+
+
+
+ 
+ 
+
+    
+    
