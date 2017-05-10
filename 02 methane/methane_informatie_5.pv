@@ -1,0 +1,77 @@
+size(512, 512)
+background(1)
+
+import json
+multiply = 15
+
+    
+with open ('02_Methane.json') as infile:
+    gasData = json.load(infile)
+print len(gasData)
+
+years = [str(y) for y in range(1990, 2015)]
+print years
+
+# data (van lage naar hoge waardes) 
+
+# cogeneration gas engine
+cog_data = gasData[3] 
+print cog_data['sector']
+
+# other
+other_data = gasData[4]
+print other_data['sector']
+
+# energy sector
+energy_data = gasData[2]
+print energy_data['sector']
+
+# waste disposal
+waste_data = gasData[1]
+print waste_data['sector'] 
+
+# agriculture
+agri_data = gasData[1]
+print agri_data['sector']
+
+
+# forloop 
+
+x = 30	
+for year in years:
+    x = x + 17
+    # barheight = data[year] * multiply
+    barheightcogeneration = cog_data[year] * multiply
+    barheightother= other_data[year] * multiply
+    barheightenergy= energy_data[year] * multiply
+    barheightwastedisposal= waste_data[year] * multiply
+    barheightagriculture= agri_data[year] * multiply
+
+
+
+    fill("mediumseagreen")
+    from_y = 500 - barheightcogeneration
+    rect(x, from_y ,12 , barheightcogeneration)
+    
+    fill("seagreen")
+    from_y = 500 - (barheightother + barheightcogeneration)
+    rect(x, from_y, 12, barheightother)
+    
+    fill ("green")
+    from_y = 500 - (barheightenergy + barheightother + barheightcogeneration)
+    rect(x, from_y ,12, barheightenergy) 
+
+    fill("yellowgreen")
+    from_y = 500 - (barheightwastedisposal + barheightenergy + barheightother + barheightcogeneration )
+    rect(x, from_y, 12, barheightwastedisposal)
+
+    fill("palegreen")
+    from_y = 500 - (barheightagriculture + barheightwastedisposal + barheightenergy + barheightother + barheightcogeneration)
+    rect(x, from_y, 12, barheightagriculture)
+
+
+ 
+ 
+
+    
+    
