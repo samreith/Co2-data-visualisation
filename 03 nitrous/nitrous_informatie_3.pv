@@ -1,0 +1,72 @@
+size(512, 600)
+background(1)
+
+import json
+multiply = 15
+
+    
+with open ('03_Nitrousoxide.json') as infile:
+    gasData = json.load(infile)
+print len(gasData)
+
+years = [str(y) for y in range(1990, 2015)]
+print years
+
+# data (van lage naar hoge waardes) 
+
+# other
+other_data = gasData[2] 
+print other_data['sector']
+
+# industry
+industry_data = gasData[1]
+print industry_data['sector']
+
+# agriculture
+agri_data = gasData[0]
+print agri_data['sector']
+
+
+
+
+# forloop 
+
+x = 30	
+for year in years:
+    x = x + 17
+    # barheight = data[year] * multiply
+    barheightother = other_data[year] * multiply
+    barheightindustry = industry_data[year] * multiply
+    barheightagriculture = agri_data[year] * multiply
+   
+
+
+
+    fill("sandybrown")
+    from_y = 500 - barheightother
+    rect(x, from_y ,12 , barheightother)
+    
+    fill("chocolate")
+    from_y = 500 - (barheightindustry + barheightother)
+    rect(x, from_y, 12, barheightindustry)
+    
+    fill ("darkorange")
+    from_y = 500 - (barheightagriculture + barheightindustry + barheightother)
+    rect(x, from_y ,12, barheightagriculture) 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+    
+    
