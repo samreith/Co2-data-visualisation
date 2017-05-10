@@ -44,20 +44,20 @@ for year in years:
 
 
     fill('#0000ff')
-    from_y = 500 - barheightindustry
-    rect(x, from_y ,12 , barheightindustry)
+    from_y = 500 - barheightagriculture
+    rect(x, from_y ,12 , barheightagriculture)
     
     fill('#800080')
-    from_y = 500 - (barheightindustry + barheightagriculture)
-    rect(x, from_y, 12, barheightagriculture)
+    from_y = 500 - (barheightbuiltup + barheightagriculture)
+    rect(x, from_y, 12, barheightbuiltup)
     
     fill ('#000')
-    from_y = 500 - (barheightindustry + barheightagriculture + barheightbuiltup)
-    rect(x, from_y ,12, barheightbuiltup) 
+    from_y = 500 - (barheighttraffic + barheightbuiltup + barheightagriculture)
+    rect(x, from_y ,12, barheighttraffic) 
 
     fill('#f00')
-    from_y = 500 - (barheightindustry + barheightagriculture + barheightbuiltup + barheighttraffic)
-    rect(x, from_y, 12, barheighttraffic)
+    from_y = 500 - (barheightindustry +  barheighttraffic + barheightbuiltup + barheightagriculture )
+    rect(x, from_y, 12, barheightindustry)
 
 
 
