@@ -1,8 +1,8 @@
-size(512, 512)
+size(512, 2850)
 background(1)
 
 import json
-multiply = 2
+multiply = 15
 
     
 with open ('01_Carbondioxide.json') as infile:
@@ -35,7 +35,7 @@ print industry_data['sector']
 
 x = 30	
 for year in years:
-    x = x + 16
+    x = x + 17
     # barheight = data[year] * multiply
     barheightagriculture = agri_data[year] * multiply
     barheightbuiltup= build_data[year] * multiply
@@ -43,20 +43,20 @@ for year in years:
     barheightindustry= industry_data[year] * multiply
 
 
-    fill('#0000ff')
-    from_y = 500 - barheightagriculture
+    fill("lightcyan")
+    from_y = 2800 - barheightagriculture
     rect(x, from_y ,12 , barheightagriculture)
     
-    fill('#800080')
-    from_y = 500 - (barheightbuiltup + barheightagriculture)
+    fill("lightblue")
+    from_y = 2800 - (barheightbuiltup + barheightagriculture)
     rect(x, from_y, 12, barheightbuiltup)
     
-    fill ('#000')
-    from_y = 500 - (barheighttraffic + barheightbuiltup + barheightagriculture)
+    fill ("lightskyblue")
+    from_y = 2800 - (barheighttraffic + barheightbuiltup + barheightagriculture)
     rect(x, from_y ,12, barheighttraffic) 
 
-    fill('#f00')
-    from_y = 500 - (barheightindustry +  barheighttraffic + barheightbuiltup + barheightagriculture )
+    fill("steelblue")
+    from_y = 2800 - (barheightindustry +  barheighttraffic + barheightbuiltup + barheightagriculture )
     rect(x, from_y, 12, barheightindustry)
 
 
