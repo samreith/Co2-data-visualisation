@@ -1,4 +1,4 @@
-size(512, 600)
+size(1002, 600)
 background(1)
 
 import json
@@ -31,9 +31,9 @@ print agri_data['sector']
 
 # forloop 
 
-x = 30	
+x = 35	
 for year in years:
-    x = x + 17
+    x = x + 35
     # barheight = data[year] * multiply
     barheightother = other_data[year] * multiply
     barheightindustry = industry_data[year] * multiply
@@ -42,15 +42,15 @@ for year in years:
 
 
 
-    fill("sandybrown")
+    fill("black")
     from_y = 500 - barheightother
-    rect(x, from_y ,12 , barheightother)
+    rect(x, from_y ,12, barheightother)
     
-    fill("chocolate")
+    fill("dimgray")
     from_y = 500 - (barheightindustry + barheightother)
-    rect(x, from_y, 12, barheightindustry)
+    rect(x, from_y, 12,barheightindustry )
     
-    fill ("darkorange")
+    fill ("darkgray")
     from_y = 500 - (barheightagriculture + barheightindustry + barheightother)
     rect(x, from_y ,12, barheightagriculture) 
 

@@ -42,8 +42,9 @@ for year in years:
     barheighttraffic= traffic_data[year] * multiply
     barheightindustry= industry_data[year] * multiply
 
-
+    
     fill("black")
+    # strokewidth(9)
     from_y = 2800 - barheightagriculture
     rect(x, from_y ,12, barheightagriculture)
     

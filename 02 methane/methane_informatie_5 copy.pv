@@ -39,7 +39,7 @@ print agri_data['sector']
 
 x = 30	
 for year in years:
-    x = x + 35
+    x = x + 45
     # barheight = data[year] * multiply
     barheightcogeneration = cog_data[year] * multiply
     barheightother= other_data[year] * multiply
@@ -49,26 +49,27 @@ for year in years:
 
 
     
-    fill("black")
+    stroke("black")
     from_y = 500 - barheightcogeneration
-    rect(x, from_y ,12, barheightcogeneration)
+    strokewidth(3)
+    line(x, from_y ,x+20 , from_y) # +barheightcogeneration)
     
     # stroke(None)
-    fill("dimgrey")
+    stroke("black")
     from_y = 500 - (barheightother + barheightcogeneration)
-    rect(x, from_y, 12, barheightother)
+    line(x, from_y, x+20, from_y) #barheightother)
     
-    fill ("darkgray")
+    stroke ("black")
     from_y = 500 - (barheightenergy + barheightother + barheightcogeneration)
-    rect(x, from_y, 12, barheightenergy)
+    line(x, from_y, x+20, from_y) #barheightother)
 
-    fill("silver")
+    stroke("black")
     from_y = 500 - (barheightwastedisposal + barheightenergy + barheightother + barheightcogeneration )
-    rect(x, from_y, 12, barheightwastedisposal)
+    line(x, from_y, x+20, from_y) #barheightother)
 
-    fill("lightgrey")
+    stroke("black")
     from_y = 500 - (barheightagriculture + barheightwastedisposal + barheightenergy + barheightother + barheightcogeneration)
-    rect(x, from_y, 12, barheightagriculture)
+    line(x, from_y, x+20, from_y) #barheightother)
 
 
 
