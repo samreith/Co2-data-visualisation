@@ -1,7 +1,7 @@
 # Co2-data-visualisation
 
 A data visualisation of greenhouse gas emissions in the Netherlands,
-consisting data from 1990 to 2015.
+consisting data from 1990 to 2014.
 
 Three catogories of gas emissions are visualised.
 1. Carbon Dioxide
